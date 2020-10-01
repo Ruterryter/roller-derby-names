@@ -1,4 +1,5 @@
 import React from 'react';
+import Randomizer from '../components/Randomizer';
 
 
 
@@ -9,6 +10,7 @@ function App() {
         <p>
           Get your own cool Roller Derby Name here!
         </p>
+        <Randomizer />
       </header>
     </div>
   );
