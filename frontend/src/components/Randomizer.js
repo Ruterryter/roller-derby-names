@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CatergoryButton } from './CatergoryButton';
 
 
@@ -8,33 +8,46 @@ import { CatergoryButton } from './CatergoryButton';
 // Onclick => randomly choose a name from the chosen category - prints it out 
 // Resetbutton - choose a new name
 
-const nameUrl = ('https://derby-names.herokuapp.com/rollerderbynames')
+const url = 'https://derby-names.herokuapp.com/rollerderbynames'
 
-const Randomizer = (props) => {
-  const [yourName, setYourName] = useState([])
-  const [loading, setLoading] = useState(true)
-  const randomName = Math.floor(Math.random() * names.length)
+
+const Randomizer = () => {
+  let [yourName, setYourName] = useState([])
+
 
   useEffect(() => {
-    fetch('https://derby-names.herokuapp.com/rollerderbynames')
+    fetch(url)
       .then((res) => res.json())
       .then((names) => {
+        let randomName = Math.floor(Math.random() * names.length)
+        const yourRollerDerbyName = names.filter((index) => index.names === index)
+
+
+        // { console.log(names[1].firstName) }
+
+        // { console.log(yourName) }
+
+
         setYourName(randomName)
-        setLoading(false)
+
       })
-  }, [])
+  })
 
   return (
-    <div>
-
+    <>
       <p>Pick the emoji that represent you the most</p>
       {/* <CatergoryButton 
       emoji= {}
       category= {}
       onClick={}/> */}
-      <div>Your name is: </div>
-    </div>
+      <div> Name: {yourName}</div>
+      <div>Your name is: {yourName.firstname, yourName.lastName}</div>
+
+    </>
   );
 }
+
+
+
 
 export default Randomizer;

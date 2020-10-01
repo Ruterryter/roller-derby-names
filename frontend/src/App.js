@@ -1,5 +1,5 @@
 import React from 'react';
-import Randomizer from '../components/Randomizer';
+import Randomizer from './components/Randomizer';
 
 
 
