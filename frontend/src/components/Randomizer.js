@@ -12,45 +12,31 @@ const url = 'https://derby-names.herokuapp.com/rollerderbynames'
 
 
 const Randomizer = () => {
-  let [yourName, setYourName] = useState([])
-  let [yourRollerDerbyName, setYourRollerDerbyName] = useState([])
-
+  const [yourName, setYourName] = useState({ firstName: "", lastName: "" })
 
   useEffect(() => {
     fetch(url)
+
       .then((res) => res.json())
       .then((names) => {
-        let randomName = Math.floor(Math.random() * names.length)
-        //const yourRollerDerbyName = names.filter((index) => index.names === index) - används ej
+        setYourName(names[Math.floor(Math.random() * names.length)])
 
-        setYourName(randomName)
-        // yourName retunerar då ett index, mappa över indexet och få fram firstName och lastName 
-
-        //varför funkar inte denna? 
-        let yourRollerDerbyName = yourName.map(user => {
-          return (
-            yourRollerDerbyName.push({ firstname: user.firstName, lastname: user.lastName, id: user._id, })
-          )
-        })
-        setYourRollerDerbyName(yourRollerDerbyName)
+        // const yourRollerDerbyName = (names[Math.floor(Math.random() * names.length)])
+        //setYourName(yourRollerDerbyName)
       })
-  })
-
-
-  console.log(yourRollerDerbyName)
+  }, [])
 
 
 
   return (
     <>
-      {/* <p>Pick the emoji that represent you the most</p>
-      {/* <CatergoryButton 
-      emoji= {}
-      category= {}
-      onClick={}/> */}
+      <p>Pick the emoji that represent you the most</p>
+      {/* <CatergoryButton
+        title="Get your Roller Derby Name"
+        emoji="🐶"
+        onClick={setYourName} /> */}
 
-      <div>Your name is: </div>
-
+      <div>Your name is: {yourName.firstName} {yourName.lastName} </div>
 
 
     </>
