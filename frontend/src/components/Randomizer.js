@@ -13,6 +13,7 @@ const url = 'https://derby-names.herokuapp.com/rollerderbynames'
 
 const Randomizer = () => {
   let [yourName, setYourName] = useState([])
+  let [yourRollerDerbyName, setYourRollerDerbyName] = useState([])
 
 
   useEffect(() => {
@@ -20,28 +21,37 @@ const Randomizer = () => {
       .then((res) => res.json())
       .then((names) => {
         let randomName = Math.floor(Math.random() * names.length)
-        const yourRollerDerbyName = names.filter((index) => index.names === index)
-
-
-        // { console.log(names[1].firstName) }
-
-        // { console.log(yourName) }
-
+        //const yourRollerDerbyName = names.filter((index) => index.names === index) - används ej
 
         setYourName(randomName)
+        // yourName retunerar då ett index, mappa över indexet och få fram firstName och lastName 
 
+        //varför funkar inte denna? 
+        let yourRollerDerbyName = yourName.map(user => {
+          return (
+            yourRollerDerbyName.push({ firstname: user.firstName, lastname: user.lastName, id: user._id, })
+          )
+        })
+        setYourRollerDerbyName(yourRollerDerbyName)
       })
   })
 
+
+  console.log(yourRollerDerbyName)
+
+
+
   return (
     <>
-      <p>Pick the emoji that represent you the most</p>
+      {/* <p>Pick the emoji that represent you the most</p>
       {/* <CatergoryButton 
       emoji= {}
       category= {}
       onClick={}/> */}
-      <div> Name: {yourName}</div>
-      <div>Your name is: {yourName.firstname, yourName.lastName}</div>
+
+      <div>Your name is: </div>
+
+
 
     </>
   );
