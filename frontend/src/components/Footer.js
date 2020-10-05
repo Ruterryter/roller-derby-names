@@ -1,11 +1,36 @@
 import React from 'react';
+import styled from 'styled-components'
+
+const FooterWrapper = styled.div`
+  background-color: #0000F9;
+  width: 100%;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
+
+const AttributeLink = styled.a`
+  text-decoration: none;
+  color: #FFF;
+
+  &:hover {
+    text-decoration: none;
+    color: #86007D;
+`
+
+const AttributeTitle = styled.h5`
+  color: #FFF;
+`
+
+
 
 export const Footer = (props) => {
   return (
-    <div>
-      <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-
-    </div>
+    <FooterWrapper>
+      <AttributeTitle>Icons made by <AttributeLink href="https://www.flaticon.com/authors/kiranshastry" title="Kiranshastry">Kiranshastry</AttributeLink> from <AttributeLink href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</AttributeLink></AttributeTitle>
+    </FooterWrapper>
   );
 }
 
