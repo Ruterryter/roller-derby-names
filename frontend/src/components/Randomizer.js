@@ -30,11 +30,7 @@ const Randomizer = () => {
 
   return (
     <>
-      <p>Pick the emoji that represent you the most</p>
-      {/* <CatergoryButton
-        title="Get your Roller Derby Name"
-        emoji="🐶"
-        onClick={setYourName} /> */}
+      {/* <p>Pick the emoji that represent you the most</p> */}
 
       <div>Your name is: {yourName.firstName} {yourName.lastName} </div>
 

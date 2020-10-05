@@ -6,6 +6,7 @@ import Randomizer from './components/Randomizer';
 
 export function App() {
   const [randomizerVisible, setRandomizerVisible] = useState(false);
+  const onClick = () => setRandomizerVisible(true)
   return (
     <div className="App">
       <header className="App-header">
@@ -13,10 +14,13 @@ export function App() {
           Get your own cool Roller Derby Name here!
         </p>
         <CatergoryButton title="Get your Roller Derby Name"
-          emoji="🐶" onClick={() => setRandomizerVisible(true)}
+          emoji="⚡" onClick={onClick}
         />
+        {randomizerVisible ? <Randomizer /> : null}
       </header>
-      <Randomizer visible={randomizerVisible} />
+
+
+
     </div>
   );
 }
