@@ -29,7 +29,7 @@ const AttributeTitle = styled.h5`
 export const Footer = (props) => {
   return (
     <FooterWrapper>
-      <AttributeTitle>Icons made by <AttributeLink href="https://www.flaticon.com/authors/kiranshastry" title="Kiranshastry">Kiranshastry</AttributeLink> from <AttributeLink href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</AttributeLink></AttributeTitle>
+      <AttributeTitle>Icons made by <AttributeLink href="https://www.flaticon.com/authors/freepik" title="freepik">Freepik</AttributeLink> from <AttributeLink href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</AttributeLink></AttributeTitle>
     </FooterWrapper>
   );
 }
