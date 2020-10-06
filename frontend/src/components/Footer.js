@@ -12,6 +12,7 @@ const FooterWrapper = styled.div`
 `
 
 const AttributeLink = styled.a`
+  font-family: 'Lato', sans-serif;
   text-decoration: none;
   color: #FFF;
 
@@ -21,10 +22,9 @@ const AttributeLink = styled.a`
 `
 
 const AttributeTitle = styled.h5`
+  font-family: 'Lato', sans-serif;
   color: #FFF;
 `
-
-
 
 export const Footer = (props) => {
   return (

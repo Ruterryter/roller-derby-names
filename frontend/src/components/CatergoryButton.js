@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import Randomizer from './Randomizer';
+import React from 'react'
 import styled from 'styled-components'
 
 const NameButton = styled.button`

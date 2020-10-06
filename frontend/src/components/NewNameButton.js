@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components'
 
 const NameButton = styled.button`
@@ -9,7 +9,8 @@ const NameButton = styled.button`
   outline: none;
   border: none;
   padding: 20px; 
-  margin-top: 50px; 
+  margin-top: 20px; 
+  margin-bottom: 20px;
  
   &:hover {
     text-decoration: none;
@@ -19,18 +20,9 @@ const ButtonTitle = styled.span`
 
 `
 
-const RollerDerbyName = styled.h4`
-  display: flex;
-  justify-content: center; 
-  color: #fff;
-  margin-top: 50px;
-`
-
 const EmojiHolder = styled.span`
   margin: 10px;
 `
-
-const url = 'https://derby-names.herokuapp.com/rollerderbynames'
 
 
 export const NewNameButton = ({ onClick, title, emoji }) => {

@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { CatergoryButton } from './components/CatergoryButton'
-import Randomizer from './components/Randomizer'
-import { Footer } from './components/Footer'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-import { NewNameButton } from './components/NewNameButton';
-
+import { CatergoryButton } from './components/CatergoryButton'
+import { Randomizer } from './components/Randomizer'
+import { Footer } from './components/Footer'
+import { NewNameButton } from './components/NewNameButton'
+import { Header } from './components/Header'
 
 
 const AppWrapper = styled.div`
@@ -15,34 +15,7 @@ const AppWrapper = styled.div`
   justify-content: center;
   align-items: center;
 `
-const Header = styled.header`
-  display: flex;
-  flex-direction: column;
-  height: 375px;
-  width: 100%;
-  background-color: #FFA52C;
-  justify-content: center;
-  align-items: center;
-`
-const Heading = styled.h1`
-  display: flex;
-  color: #FFF;
-  width: 400px;
-  margin-top: 80px;
 
-  &:hover {
-    text-decoration: none;
-    color: #86007D;
-
-  @media (max-width: 768px) {
-  font-size: 24px;
-}
-`
-const SkaterIcon = styled.img`
-  display: flex;
-  width: 200px;
-  height: 200px;
-`
 const Main = styled.div`
   widht: 100%;
   height: 400px;
@@ -59,18 +32,13 @@ export function App() {
 
   return (
     <AppWrapper>
-      <Header>
-        <Heading>
-          Get your Roller Derby Name here!
-        </Heading>
-        <SkaterIcon src={require("./assets/roller-skate-big.png")} />
-      </Header>
+      <Header />
       <Main>
         <CatergoryButton title="Get your Roller Derby name"
           emoji="⚡" onClick={onClick}
         />
         {randomizerVisible ? <Randomizer /> : null}
-        {randomizerVisible ? <NewNameButton title={"Get me a new name!"} onClick={newName} emoji="💎" /> : null}
+        {randomizerVisible ? <NewNameButton title={"Give me a new name!"} onClick={newName} emoji="💎" /> : null}
       </Main>
       <Footer />
     </AppWrapper>
