@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CatergoryButton } from './components/CatergoryButton'
 import Randomizer from './components/Randomizer'
 import { Footer } from './components/Footer'
 import styled from 'styled-components'
+import { NewNameButton } from './components/NewNameButton';
 
 
 
@@ -13,7 +14,6 @@ const AppWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 `
 const Header = styled.header`
   display: flex;
@@ -37,7 +37,6 @@ const Heading = styled.h1`
   @media (max-width: 768px) {
   font-size: 24px;
 }
- 
 `
 const SkaterIcon = styled.img`
   display: flex;
@@ -47,13 +46,17 @@ const SkaterIcon = styled.img`
 const Main = styled.div`
   widht: 100%;
   height: 400px;
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `
-
-
 
 export function App() {
   const [randomizerVisible, setRandomizerVisible] = useState(false);
   const onClick = () => setRandomizerVisible(true)
+  const newName = () => setRandomizerVisible(false)
+
   return (
     <AppWrapper>
       <Header>
@@ -67,11 +70,11 @@ export function App() {
           emoji="⚡" onClick={onClick}
         />
         {randomizerVisible ? <Randomizer /> : null}
+        {randomizerVisible ? <NewNameButton title={"Get me a new name!"} onClick={newName} emoji="💎" /> : null}
       </Main>
       <Footer />
     </AppWrapper>
   );
 }
-
 
 export default App;

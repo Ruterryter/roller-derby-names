@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { CatergoryButton } from './CatergoryButton';
 import styled from 'styled-components'
+import { NewNameButton } from './NewNameButton';
 
 // Structure set up:
 // Pick the emoji that is you, choose from: 
@@ -13,8 +14,8 @@ const RollerDerbyName = styled.h4`
   justify-content: center; 
   color: #fff;
   margin-top: 50px;
-  
 `
+
 
 const url = 'https://derby-names.herokuapp.com/rollerderbynames'
 
@@ -32,13 +33,11 @@ const Randomizer = () => {
   }, [])
 
 
-
   return (
     <>
       {/* <p>Pick the emoji that represent you the most</p> */}
 
       <RollerDerbyName>Your name is: {yourName.firstName} {yourName.lastName} </RollerDerbyName>
-
 
     </>
   );

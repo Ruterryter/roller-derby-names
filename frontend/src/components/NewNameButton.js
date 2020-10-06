@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import Randomizer from './Randomizer';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components'
 
 const NameButton = styled.button`
@@ -10,30 +9,39 @@ const NameButton = styled.button`
   outline: none;
   border: none;
   padding: 20px; 
-  margin-top: 50px;
+  margin-top: 50px; 
  
   &:hover {
     text-decoration: none;
     color: #FFA52C;
 `
 const ButtonTitle = styled.span`
-  
+
+`
+
+const RollerDerbyName = styled.h4`
+  display: flex;
+  justify-content: center; 
+  color: #fff;
+  margin-top: 50px;
 `
 
 const EmojiHolder = styled.span`
   margin: 10px;
 `
 
-export const CatergoryButton = ({ emoji, onClick, title, }) => {
+const url = 'https://derby-names.herokuapp.com/rollerderbynames'
+
+
+export const NewNameButton = ({ onClick, title, emoji }) => {
 
   return (
-    <div>
-      <NameButton onClick={onClick} title={title}>
-        <EmojiHolder role="img" aria-label="emoji">{emoji}</EmojiHolder>
+    <>
+      <NameButton onClick={onClick}>
+        <EmojiHolder role="img" aria-label="emoji" >{emoji}</EmojiHolder>
         <ButtonTitle>{title}</ButtonTitle>
         <EmojiHolder role="img" aria-label="emoji" >{emoji}</EmojiHolder>
       </NameButton>
-    </div>
+    </>
   );
 }
-

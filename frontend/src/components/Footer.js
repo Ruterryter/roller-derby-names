@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components'
 
 const FooterWrapper = styled.div`
-  background-color: #0000F9;
+  background-color: #FFA52C;
   width: 100%;
-  height: 150px;
+  height: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
