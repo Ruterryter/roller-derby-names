@@ -23,8 +23,8 @@ const Heading = styled.h1`
     text-decoration: none;
     color: #86007D;
 
-  @media (max-width: 768px) {
-  font-size: 24px;
+  @media (max-width: 1200px) {
+  font-size: 18px;
 }
 `
 
