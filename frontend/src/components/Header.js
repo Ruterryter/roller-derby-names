@@ -24,7 +24,7 @@ const Heading = styled.h1`
     color: #86007D; }
 
   @media (max-width: 768px) {
-    width: 350px;}
+    width: 325px;}
 }
 `
 
@@ -32,6 +32,10 @@ const SkaterIcon = styled.img`
   display: flex;
   width: 200px;
   height: 200px;
+
+  @media (max-width: 768px) {
+    width: 100px;
+    height: 100px;}
  `
 
 export const Header = (props) => {

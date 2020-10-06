@@ -4,10 +4,10 @@ import styled from 'styled-components'
 const FooterWrapper = styled.div`
   background-color: #FFA52C;
   width: 100%;
-  height: 100px;
+  height: 20vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 `
 
