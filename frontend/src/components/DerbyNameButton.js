@@ -23,7 +23,7 @@ const EmojiHolder = styled.span`
   margin: 10px;
 `
 
-export const CatergoryButton = ({ emoji, onClick, title, }) => {
+export const DerbyNameButton = ({ emoji, onClick, title, }) => {
 
   return (
     <div>

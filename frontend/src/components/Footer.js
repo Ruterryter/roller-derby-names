@@ -7,7 +7,7 @@ const FooterWrapper = styled.div`
   height: 20vh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
 `
 

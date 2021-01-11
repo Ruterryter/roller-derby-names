@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { CatergoryButton } from './components/CatergoryButton'
-import { Randomizer } from './components/Randomizer'
+import { DerbyNameButton } from './components/DerbyNameButton'
+import { NameRandomizer } from './components/NameRandomizer'
 import { Footer } from './components/Footer'
 import { NewNameButton } from './components/NewNameButton'
 import { Header } from './components/Header'
@@ -30,14 +30,15 @@ export function App() {
   const onClick = () => setRandomizerVisible(true)
   const newName = () => setRandomizerVisible(false)
 
+
   return (
     <AppWrapper>
       <Header />
       <Main>
-        <CatergoryButton title="Get your Roller Derby name"
+        <DerbyNameButton title="Get your Roller Derby name"
           emoji="⚡" onClick={onClick}
         />
-        {randomizerVisible ? <Randomizer /> : null}
+        {randomizerVisible ? <NameRandomizer /> : null}
         {randomizerVisible ? <NewNameButton title={"Give me a new name!"} onClick={newName} emoji="💎" /> : null}
       </Main>
       <Footer />

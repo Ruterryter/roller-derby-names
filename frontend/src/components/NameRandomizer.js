@@ -2,12 +2,6 @@ import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components'
 import { rollIn } from 'react-animations';
 
-// Structure set up:
-// Pick the emoji that is you, choose from: 
-// skull, kitten, clown, lipstick
-// Onclick => randomly choose a name from the chosen category - prints it out 
-// Resetbutton - choose a new name
-
 
 const rollInAnimation = keyframes`${rollIn}`;
 
@@ -31,7 +25,7 @@ const DerbyImage = styled.img`
 const url = 'https://derby-names.herokuapp.com/rollerderbynames'
 
 
-export const Randomizer = () => {
+export const NameRandomizer = () => {
   const [yourName, setYourName] = useState({ firstName: "", lastName: "" })
 
   useEffect(() => {
@@ -46,7 +40,6 @@ export const Randomizer = () => {
 
   return (
     <>
-      {/* <p>Pick the emoji that represent you the most</p> */}
       <RollerDerbyName>Your name is: {yourName.firstName} {yourName.lastName} </RollerDerbyName>
       <AnimationDiv>
         <DerbyImage src={require("../assets/034-disco-ball.png")} />
